@@ -1,12 +1,11 @@
 @import "katex/dist/katex.min.css";
 @import "highlight.js/styles/github.css";
 
-
-@import url('https://static.toss.im/tps/main.css');
-@import url('https://static.toss.im/tps/others.css');
+@import url("https://static.toss.im/tps/main.css");
+@import url("https://static.toss.im/tps/others.css");
 
 * {
-  font-family: 'Toss Product Sans', sans-serif;
+  font-family: "Toss Product Sans", sans-serif;
 }
 
 @tailwind base;
@@ -89,7 +88,8 @@
 }
 
 @keyframes blink {
-  0%, 100% {
+  0%,
+  100% {
     border-color: transparent;
   }
   50% {
@@ -115,4 +115,14 @@
 
 .transform-style-preserve-3d {
   transform-style: preserve-3d;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table th,
+table td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
 }

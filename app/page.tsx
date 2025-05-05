@@ -52,6 +52,9 @@ export default function Home() {
                 <span className="bg-orange-500 rounded-full px-2 py-1">
                   GIF 저장
                 </span>
+                <span className="bg-orange-500 rounded-full px-2 py-1">
+                  NEXON API
+                </span>
               </div>
             </CardContent>{" "}
           </Card>
@@ -74,103 +77,187 @@ export default function Home() {
               </CardDescription>
             </CardHeader>
             <CardContent className="text-sm text-muted-foreground">
-            <div className="flex flex-wrap gap-2 text-xs text-white">
+              <div className="flex flex-wrap gap-2 text-xs text-white">
                 <span className="bg-sky-500 rounded-full px-2 py-1">
-                  일기
+                  일기 쓰기
                 </span>
                 <span className="bg-sky-500 rounded-full px-2 py-1">
                   ChatGPT
                 </span>
                 <span className="bg-sky-500 rounded-full px-2 py-1">
-                  한 줄 요약 
+                  한 줄 요약
                 </span>
                 <span className="bg-sky-500 rounded-full px-2 py-1">
                   이모지
                 </span>
-                <span className="bg-sky-500 rounded-full px-2 py-1">
-                  CRUD
+                <span className="bg-sky-500 rounded-full px-2 py-1">CRUD</span>
+              </div>
+            </CardContent>
+          </Card>
+        </Link>
+
+        <Link href="/stellar" passHref>
+          <Card className="overflow-hidden transition-transform hover:scale-[1.02] hover:shadow-lg cursor-pointer">
+            <Image
+              src="/stellar.png"
+              alt="메이플 별자리 미리보기"
+              width={600}
+              height={300}
+              className="w-full h-auto object-cover"
+            />
+            <CardHeader>
+              <CardTitle>메이플 별자리</CardTitle>
+              <CardDescription>
+                3D 별자리로 표현한 그란디스 대륙을 만나보세요.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="text-sm text-muted-foreground">
+              <div className="flex flex-wrap gap-2 text-xs text-white">
+                <span className="bg-violet-500 rounded-full px-2 py-1">
+                  3D WEB
+                </span>
+                <span className="bg-violet-500 rounded-full px-2 py-1">
+                  별자리
+                </span>
+                <span className="bg-violet-500 rounded-full px-2 py-1">
+                  그란디스
+                </span>
+                <span className="bg-violet-500 rounded-full px-2 py-1">
+                  사냥터 추천
+                </span>
+                <span className="bg-violet-500 rounded-full px-2 py-1">
+                  three.js
                 </span>
               </div>
             </CardContent>
           </Card>
         </Link>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Melody Synthesizer</CardTitle>
-            <CardDescription>
-              랜덤한 코드 진행에서 영감을 받고 멜로디를 만들어 보세요.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Button asChild>
-              <Link href="/music">바로가기</Link>
-            </Button>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>Markdown Studio</CardTitle>
-            <CardDescription>
-              마크다운 파일을 자유롭게 편집하세요.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Button asChild>
-              <Link href="/editor">바로가기</Link>
-            </Button>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>Midnight Stellar</CardTitle>
-            <CardDescription>
-              3D 별자리로 표현한 메이플 월드를 만나보세요.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Button asChild>
-              <Link href="/sky">바로가기</Link>
-            </Button>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>Marked Secrets</CardTitle>
-            <CardDescription>이미지에 워터마크를 삽입해보세요.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Button asChild>
-              <Link href="/image">바로가기</Link>
-            </Button>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>Motion Styles</CardTitle>
-            <CardDescription>
-              반응형 그래픽과 상호작용 해보세요.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Button asChild>
-              <Link href="/motion">바로가기</Link>
-            </Button>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>Meso Stacks</CardTitle>
-            <CardDescription>
-              주간 보스 결정석 시세를 확인하세요.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Button asChild>
-              <Link href="/meso">바로가기</Link>
-            </Button>
-          </CardContent>
-        </Card>
+        <Link href="/music" passHref>
+          <Card className="overflow-hidden transition-transform hover:scale-[1.02] hover:shadow-lg cursor-pointer">
+            <Image
+              src="/music.png"
+              alt="피아노 멜로디 미리보기"
+              width={600}
+              height={300}
+              className="w-full h-auto object-cover"
+            />
+            <CardHeader>
+              <CardTitle>피아노 멜로디</CardTitle>
+              <CardDescription>
+                AI가 추천해준 코드 진행에서 영감을 받고 멜로디를 만들어 보세요.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="text-sm text-muted-foreground">
+              <div className="flex flex-wrap gap-2 text-xs text-white">
+                <span className="bg-rose-500 rounded-full px-2 py-1">
+                  피아노
+                </span>
+                <span className="bg-rose-500 rounded-full px-2 py-1">
+                  멜로디
+                </span>
+                <span className="bg-rose-500 rounded-full px-2 py-1">
+                  AI 작곡
+                </span>
+                <span className="bg-rose-500 rounded-full px-2 py-1">
+                  코드 진행
+                </span>
+                <span className="bg-rose-500 rounded-full px-2 py-1">
+                  tone.js
+                </span>
+              </div>
+            </CardContent>
+          </Card>
+        </Link>
+
+        <Link href="/editor" passHref>
+          <Card className="overflow-hidden transition-transform hover:scale-[1.02] hover:shadow-lg cursor-pointer">
+            <Image
+              src="/editor.png"
+              alt="마크다운 에디터 미리보기"
+              width={600}
+              height={300}
+              className="w-full h-auto object-cover"
+            />
+            <CardHeader>
+              <CardTitle>마크다운 에디터</CardTitle>
+              <CardDescription>.md 파일을 자유롭게 편집하세요.</CardDescription>
+            </CardHeader>
+            <CardContent className="text-sm text-muted-foreground">
+              <div className="flex flex-wrap gap-2 text-xs text-white">
+                <span className="bg-yellow-500 rounded-full px-2 py-1">
+                  Markdown
+                </span>
+                <span className="bg-yellow-500 rounded-full px-2 py-1">
+                  에디터
+                </span>
+                <span className="bg-yellow-500 rounded-full px-2 py-1">
+                  IMGUR API
+                </span>
+              </div>
+            </CardContent>
+          </Card>
+        </Link>
+
+        <Link href="/image" passHref>
+          <Card className="overflow-hidden transition-transform hover:scale-[1.02] hover:shadow-lg cursor-pointer">
+            <Image
+              src="/image.png"
+              alt="이미지 프로세싱 미리보기"
+              width={600}
+              height={300}
+              className="w-full h-auto object-cover"
+            />
+            <CardHeader>
+              <CardTitle>이미지 프로세싱</CardTitle>
+              <CardDescription>
+                파이썬 Flask 서버를 활용한 이미지 처리 실습
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="text-sm text-muted-foreground">
+              <div className="flex flex-wrap gap-2 text-xs text-white">
+                <span className="bg-green-500 rounded-full px-2 py-1">
+                  Flask
+                </span>
+                <span className="bg-green-500 rounded-full px-2 py-1">
+                  이미지 처리
+                </span>
+                <span className="bg-green-500 rounded-full px-2 py-1">
+                  Python
+                </span>
+              </div>
+            </CardContent>
+          </Card>
+        </Link>
+
+        <Link href="/meso" passHref>
+          <Card className="overflow-hidden transition-transform hover:scale-[1.02] hover:shadow-lg cursor-pointer">
+            <Image
+              src="/meso.png"
+              alt="보스 수입 계산기 미리보기"
+              width={600}
+              height={300}
+              className="w-full h-auto object-cover"
+            />
+            <CardHeader>
+              <CardTitle>보스 수입 계산기</CardTitle>
+              <CardDescription>
+                주간 보스 결정석 시세를 확인하세요.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="text-sm text-muted-foreground">
+              <div className="flex flex-wrap gap-2 text-xs text-white">
+                <span className="bg-orange-500 rounded-full px-2 py-1">
+                  검밑솔
+                </span>
+                <span className="bg-orange-500 rounded-full px-2 py-1">
+                  세칼카
+                </span>
+                
+              </div>
+            </CardContent>
+          </Card>
+        </Link>
       </div>
 
       {/* 간결한 기술 스택 그리드 */}

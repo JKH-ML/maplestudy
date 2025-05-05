@@ -13,8 +13,9 @@ import starDataRaw from '@/public/assets/star_click_data_1000.json';
 import constellationMap from '@/public/assets/constellations.json';
 
 const PLACES = [
+  '전체 보기', // ⬅ 전체 보기를 맨 앞에 둠
   '세르니움', '불타는 세르니움', '호텔 아르크스', '오디움',
-  '도원경', '아르테리아', '카르시온', '탈라하트', '전체 보기'
+  '도원경', '아르테리아', '카르시온', '탈라하트'
 ];
 
 const CAMERA_HEIGHT = 10;
@@ -73,9 +74,9 @@ function Scene({
   const { camera } = useThree();
   const controlsRef = useRef<any>(null);
 
-  const isOverview = targetIndex === PLACES.length - 1;
+  const isOverview = targetIndex === 0;
   const radius = isOverview ? OVERVIEW_RADIUS : CLOSE_RADIUS;
-  const angleRadBase = (targetIndex * 36 * Math.PI) / 180;
+  const angleRadBase = ((targetIndex - 1) * 36 * Math.PI) / 180;
 
   useFrame(({ clock }) => {
     if (!controlsRef.current) return;
@@ -119,20 +120,20 @@ function Scene({
 
 export default function ConstellationCarouselPage() {
   const isLargeScreen = useMediaQuery('(min-width: 640px)');
-  const [mounted, setMounted] = useState(false); // 👈 추가
-  const [index, setIndex] = useState(0);
-  const [visibleVillages, setVisibleVillages] = useState<Set<string>>(new Set());
+  const [mounted, setMounted] = useState(false);
+  const [index, setIndex] = useState(0); // ✅ 전체 보기로 시작
+  const [visibleVillages, setVisibleVillages] = useState<Set<string>>(new Set(PLACES.slice(1))); // ✅ 전체 마을 선택
   const autoRotateAngleRef = useRef(0);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null; // 👈 hydration mismatch 방지
+  if (!mounted) return null;
 
-  const imagePaths = PLACES.slice(0, 8).map((name, i) => ({
+  const imagePaths = PLACES.map((name, i) => ({
     name,
-    src: `/carousel/${i + 1}${name}.webp`,
+    src: `/carousel/${i}${name}.webp`,
   }));
 
   const cellCount = imagePaths.length;
@@ -153,15 +154,15 @@ export default function ConstellationCarouselPage() {
     setVisibleVillages((prev) => {
       const next = new Set(prev);
       if (name === '전체 보기') {
-        return next.size === PLACES.length - 1 ? new Set() : new Set(PLACES.slice(0, -1));
+        return next.size === PLACES.length - 1 ? new Set() : new Set(PLACES.slice(1));
       }
       next.has(name) ? next.delete(name) : next.add(name);
       return next;
     });
   };
 
-  const currentAngle = index === PLACES.length - 1
-    ? 0 // 전체 보기일 땐 캐러셀 고정
+  const currentAngle = index === 0
+    ? 0 // ✅ 전체 보기일 때 회전 고정
     : -(360 / cellCount) * index;
 
   return (
@@ -172,10 +173,7 @@ export default function ConstellationCarouselPage() {
         </Canvas>
       </section>
 
-      <div
-        className="scene relative my-6"
-        style={{ width: w, height: h, perspective: 1000 }}
-      >
+      <div className="scene relative my-6" style={{ width: w, height: h, perspective: 1000 }}>
         <div
           className="carousel absolute w-full h-full transform-style-preserve-3d transition-transform duration-700"
           style={{ transform: rotateFn(currentAngle) }}
