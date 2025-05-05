@@ -44,7 +44,6 @@
     "react-draggable": "^4.4.6",
     "react-hook-form": "^7.55.0",
     "react-intersection-observer": "^9.16.0",
-    "react-katex": "^3.0.1",
     "react-markdown": "^10.1.0",
     "react-plotly.js": "^2.6.0",
     "rehype-highlight": "^7.0.2",
